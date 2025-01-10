@@ -110,9 +110,11 @@ const Calculator = () => {
     return input.replace(/ln\(/g, "log("); // Ganti ln(x) dengan log(x)
   };
 
+  const parsedInput = parseInput(functionInput);
+
   const handleCalculation = () => {
     try {
-        const parsedInput = parseInput(functionInput);
+        
         setParsedFunction(parsedInput); // Simpan parsedInput ke state
 
         if (method === "bisection") {
