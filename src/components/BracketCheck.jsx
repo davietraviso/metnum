@@ -28,14 +28,14 @@ const BracketCheck = ({ precision, functionInput, a, b }) => {
     );
   }
 
-  const checkForRootsGlobal = (func, steps = 100, range = [-1000, 1000]) => {
+  const checkForRootsGlobal = (func, steps = 10000, range = [-1000, 1000]) => {
     const [minX, maxX] = range;
     const stepSize = (maxX - minX) / steps;
 
     for (let i = 0; i <= steps; i++) {
       const x = minX + i * stepSize;
       const currentValue = evaluate(func, { x });
-      if (Math.abs(currentValue) < 1e-10) return true; // Fungsi menyentuh sumbu x
+      if (Math.abs(currentValue) < 1e-5) return true; // Fungsi menyentuh sumbu x
       if (i > 0 && Math.sign(currentValue) !== Math.sign(evaluate(func, { x: minX + (i - 1) * stepSize }))) {
         return true; // Fungsi melewati sumbu x
       }
