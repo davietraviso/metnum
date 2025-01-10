@@ -276,7 +276,7 @@ const Calculator = () => {
     <Tabs>
         <Tab eventKey="validation" title="Cek Interval">
             <div style={{ padding: "20px" }}>
-                <BracketCheck precision={precision} functionInput={functionInput} a={x0} b={x1} setIsValidInterval={setIsValidInterval} />
+                <BracketCheck precision={precision} functionInput={parsedInput} a={x0} b={x1} setIsValidInterval={setIsValidInterval} />
             </div>
         </Tab>
 
